@@ -49,3 +49,89 @@ body {
         background-position: 0 50%;
     }
 }
+
+/* Typing animation */
+.auto-typer h1 {
+    border-right: .15em solid white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.auto-typer h1:nth-child(1) {
+    width: 1.5em;
+    -webkit-animation: type 1s steps(20, end);
+    animation: type 1s steps(20, end), blink .5s step-end infinite alternate;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.auto-typer h1:nth-child(2) {
+    width: 9em;
+    opacity: 0;
+    -webkit-animation: type3 3s steps(20, end), blink .5s step-end infinite alternate;
+    animation: type2 3s steps(20, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      border: none;
+    }
+}
+  
+@-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid white;
+    }
+    100% {
+      border: none;
+    }
+}
+  
+@keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+@-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+}
